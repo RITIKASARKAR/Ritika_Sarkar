@@ -1,0 +1,134 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  color: #222;
+  transition: background 0.6s, color 0.6s;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #2C3E50, #3498db);
+  color: white;
+  padding: 15px 30px;
+  display: flex; justify-content: space-between; align-items: center;
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.navbar .title { font-weight: bold; font-size: 20px; }
+.navbar .links a, .navbar .links button {
+  color: white; margin-left: 20px; text-decoration: none; font-size: 16px;
+  background: none; border: none; cursor: pointer; transition: all 0.3s ease;
+}
+.navbar .links a.active, .navbar .links a:hover, .navbar .links button:hover {
+  color: #1abc9c; transform: scale(1.1);
+}
+
+/* Sections */
+.section {
+  max-width: 900px; margin: 40px auto; padding: 25px 30px;
+  background: white; border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeSlide 0.8s ease;
+}
+.section h2 { color: #3498db; margin-bottom: 15px; }
+
+/* Ideas */
+.ideas-list li {
+  margin: 12px 0;
+  padding: 12px 15px;
+  border-left: 4px solid #3498db;
+  background: #f0f8ff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.ideas-list li:hover {
+  transform: translateX(8px);
+  background: #e6f7ff;
+}
+
+/* Chat */
+.chat-container {
+  max-width: 900px; margin: 40px auto;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  display: flex; flex-direction: column; height: 70vh;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.chat-header {
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  color: #fff; padding: 15px; text-align: center;
+  border-top-left-radius: 15px; border-top-right-radius: 15px;
+  font-weight: bold;
+}
+.chat-box {
+  flex: 1; padding: 20px; overflow-y: auto;
+}
+.message {
+  margin: 10px 0; padding: 12px 18px; border-radius: 20px;
+  max-width: 70%; word-wrap: break-word;
+  animation: fadeSlide 0.6s ease;
+}
+.message.user { background: #d1f7d6; align-self: flex-end; }
+.message.bot { background: #dbeafe; align-self: flex-start; }
+.chat-input {
+  display: flex; padding: 15px; border-top: 1px solid #ccc;
+}
+.chat-input input {
+  flex: 1; padding: 12px 15px; border: 1px solid #ccc; border-radius: 25px;
+  transition: 0.3s;
+}
+.chat-input input:focus { border-color: #3498db; outline: none; }
+.chat-input button {
+  margin-left: 10px; padding: 12px 20px; border: none; border-radius: 25px;
+  background: #3498db; color: white; cursor: pointer;
+  transition: 0.3s;
+}
+.chat-input button:hover { background: #2980b9; transform: scale(1.05); }
+
+/* Login Form */
+.login-form {
+  display: flex; flex-direction: column; gap: 15px;
+  max-width: 400px; margin: 20px auto;
+}
+.login-form input {
+  padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px;
+  transition: 0.3s;
+}
+.login-form input:focus { border-color: #1abc9c; outline: none; }
+.login-form button {
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  color: white; border: none; padding: 12px;
+  border-radius: 8px; font-size: 16px; cursor: pointer;
+  transition: 0.3s;
+}
+.login-form button:hover { transform: scale(1.05); }
+
+/* Glass Effect */
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeSlide 0.8s ease; }
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1e1e, #2c3e50);
+  color: #eee;
+}
+body.dark-mode .navbar { background: linear-gradient(90deg, #000, #333); }
+body.dark-mode .section, 
+body.dark-mode .chat-container { background: rgba(40,40,40,0.85); color: #eee; }
+body.dark-mode .chat-box { background: transparent; color: #ddd; }
+body.dark-mode .message.user { background: #2e7d32; color: white; }
+body.dark-mode .message.bot { background: #1565c0; color: white; }
