@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatbot | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="title">🌐 AI Chatbot</div>
+  <div class="links">
+    <a href="index.html" class="active">Home</a>
+    <a href="login.html">Login</a>
+    <a href="ideas.html">Ideas</a>
+    <a href="about.html">About</a>
+    <button id="dark-mode-toggle">🌙</button>
+  </div>
+</nav>
+
+<!-- Welcome -->
+<section class="section fade-in">
+  <h2>🤖 Multilingual AI Assistant</h2>
+  <p>
+    Talk to your AI in <b>any language</b>. The bot detects your language and responds naturally.
+  </p>
+</section>
+
+<!-- Chat Interface -->
+<div class="chat-container fade-in">
+  <header class="chat-header">💬 Chat with AI</header>
+  <main class="chat-box" id="chat-box"></main>
+  <form class="chat-input" onsubmit="event.preventDefault(); sendMessage();">
+    <input type="text" id="user-input" placeholder="Type your message..." required />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
